@@ -48,6 +48,9 @@ then the c# build system will automatically generate the entry point. Hint hence
 </Button>
 ```
   
+- Integrate localization via `resx` files.
+  (a) Add `.resx` files to `/Resources/` directory, update `.csproj` file to include `Aigamo.ResXGenerator` which will use the `resx` files to generate `c#` files.      
+  (b) The `.haml.cs` code-behind file does not need to be updated except for calling `CultureInfo("fr")` to change the language. 
 
-
+  `dotnet clean;dotnet build;dotnet run .`         
 - TODO: resx files.

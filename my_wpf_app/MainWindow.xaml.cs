@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
+using System.Threading;
 
 namespace my_wpf_app;
 
@@ -22,6 +24,7 @@ public partial class MainWindow : Window {
 
   [STAThread]
   public static void Main() {
+    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr");
     var app = new Application();
     var window = new MainWindow();
     app.Run(window);
