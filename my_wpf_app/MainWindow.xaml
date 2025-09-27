@@ -11,11 +11,14 @@
         Width="800">
     <Grid>
         <TextBlock
+            Name="myTxtBlk"
             Text="{x:Static res:Resources.Greeting}"
             Height="44"
             Width="102"/>
+
         <StackPanel>
             <Button x:Name="button"
+                    Click="MyBtnId"
                     Content="Click Me"
                     Margin="100"/>
         </StackPanel>

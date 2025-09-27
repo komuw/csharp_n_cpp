@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
 using System.Threading;
+using System.IO;
 
 namespace my_wpf_app;
 
@@ -20,6 +21,15 @@ public partial class MainWindow : Window {
   // This is the code-behind.
   public MainWindow() {
     InitializeComponent();
+  }
+  private void MyBtnId(object sender, RoutedEventArgs e) {
+    myTxtBlk.Text = "Awe btn clicked";
+    // e.Handled = true;  // Stops event bubbling.
+
+    var msg = $@"MyBtnId was clicked
+      sender={sender}
+      event={e}\n";
+    File.AppendAllText("event_log.txt", msg);
   }
 
   [STAThread]
