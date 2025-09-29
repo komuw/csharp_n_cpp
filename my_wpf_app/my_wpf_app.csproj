@@ -2,13 +2,17 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net47</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>10.0</LangVersion>  <!-- TODO: we should use the c# version for .net4.7 which is c#7 -->
     <UseWPF>true</UseWPF>
-    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ResXGenerator_PublicClass>true</ResXGenerator_PublicClass>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aigamo.ResXGenerator" Version="4.2.0" PrivateAssets="all" />
+    <PackageReference Include="Aigamo.ResXGenerator"  Version="4.0.0" PrivateAssets="all" />
   </ItemGroup>
 </Project>
+
