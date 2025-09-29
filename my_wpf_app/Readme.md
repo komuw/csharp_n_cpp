@@ -57,3 +57,13 @@ then the c# build system will automatically generate the entry point. Hint hence
   You can add events. Look at how `MyBtnId` & `myTxtBlk` are used in `.xaml` and `.cs` file. 
   You can register custom routed events via `RegisterRoutedEvent`   
 
+- You can add a popup that when clicked will reveal others things inside(eg, it has a hyperlink inside). Note it has a PlacementTarget that is the element that will reveal the popup when clicked. In out case it is a button we've named `PopupButton`. That button has one event handler `PopupButton_OpenPopup` that is activated either when button is clicked or someone navigates into it(eg, via keyboard tab key). That event handler also needs to be added to the code-behind and should set `IsOpen` boolean. Note that the hypelink also has an event handler that needs to be added to code-behind(`Hyperlink_OnRequestNavigate`). It should ideally handle the link been clicked and open it up or log it, etc.
+```xaml
+<Popup x:Name="MyPopup" PlacementTarget="{Binding ElementName=PopupButton}">
+<Button x:Name="PopupButton" Content="Show Popup" Click="PopupButton_OpenPopup" GotFocus="PopupButton_OpenPopup"/>
+```
+```c#
+private void PopupButton_OpenPopup(object sender, RoutedEventArgs e) {
+  MyPopup.IsOpen = true;
+}
+```

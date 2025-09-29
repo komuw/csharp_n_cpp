@@ -23,11 +23,34 @@ namespace my_wpf_app {
     public MainWindow() {
       InitializeComponent();
     }
+
     private void MyBtnId(object sender, RoutedEventArgs e) {
       myTxtBlk.Text = "Awe btn clicked";
       // e.Handled = true;  // Stops event bubbling.
 
-      var msg = $@"MyBtnId was clicked
+      var msg = $@"
+      MyBtnId: was clicked
+      sender={sender}
+      event={e}\n";
+      File.AppendAllText("event_log.txt", msg);
+    }
+
+    private void Hyperlink_OnRequestNavigate(object sender, RequestNavigateEventArgs e) {
+      e.Handled = true;
+      var msg = $@"
+      Hyperlink_OnRequestNavigate: was clicked
+      sender={sender}
+      event={e}\n";
+      File.AppendAllText("event_log.txt", msg);
+    }
+
+
+    private void PopupButton_OpenPopup(object sender, RoutedEventArgs e) {
+      // The method name must match the event handler name in the XAML file.
+      MyPopup.IsOpen = true;
+
+      var msg = $@"
+      Hyperlink_OnRequestNavigate: was clicked
       sender={sender}
       event={e}\n";
       File.AppendAllText("event_log.txt", msg);
