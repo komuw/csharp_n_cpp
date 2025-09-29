@@ -48,6 +48,8 @@ namespace my_wpf_app {
     private void PopupButton_OpenPopup(object sender, RoutedEventArgs e) {
       // The method name must match the event handler name in the XAML file.
       MyPopup.IsOpen = true;
+      // Set keyboard focus to the Hyperlink
+      MyCoolHyperlink.Focus();
 
       var msg = $@"
       Hyperlink_OnRequestNavigate: was clicked

@@ -67,3 +67,7 @@ private void PopupButton_OpenPopup(object sender, RoutedEventArgs e) {
   MyPopup.IsOpen = true;
 }
 ```
+- To make the hyperlink navigable using keyboard we have two options;
+  (a) Implement in code-behind. Add an `x:Name="MyCoolHyperlink"` to the hyperlink then call `MyCoolHyperlink.Focus();` in the code-behind.      
+      Commit implements that approach. However once focussed, u cant tab away to another element.
+  (b) Use a button

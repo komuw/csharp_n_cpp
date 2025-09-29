@@ -55,11 +55,13 @@
                                FontWeight="Bold"
                                Margin="0,0,0,10"/>
                     <TextBlock>
-                        <!-- The Hyperlink. It requires a RequestNavigate event handler to open the URL. -->
-                        <Hyperlink NavigateUri="https://www.google.com"
-                                   RequestNavigate="Hyperlink_OnRequestNavigate">
-                            Click here to visit Google
-                        </Hyperlink>
+                            <!-- The Hyperlink. It requires a RequestNavigate event handler to open the URL. -->
+                            <Hyperlink
+                            x:Name="MyCoolHyperlink"
+                            NavigateUri="https://www.google.com"
+                            RequestNavigate="Hyperlink_OnRequestNavigate">
+                                Click here to visit Google
+                            </Hyperlink>
                     </TextBlock>
                 </StackPanel>
             </Border>
