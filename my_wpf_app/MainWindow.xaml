@@ -22,6 +22,13 @@
                     Content="Click Me"
                     Margin="100"/>
 
+           <!-- 
+           We are creating a TextBox that is bound to the Age property in MainWindow.xaml.cs
+           The Mode=OneWay means that changes to the Age property in the code-behind will 
+            update the TextBox, but changes in the TextBox will not update the Age property.
+           -->
+           <TextBox Name="AgeTextBox" Text="{Binding Age, Mode=OneWay}"/> 
+
             <!-- 
             This PopupButton exists solely as a PlacementTarget for the Popup element below.
             The `PopupButton_OpenPopup` must match the corresponding event handler in the code-behind(MainWindow.xaml.cs).

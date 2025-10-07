@@ -22,6 +22,15 @@ namespace my_wpf_app {
     // This is the code-behind.
     public MainWindow() {
       InitializeComponent();
+      var p = new Person();
+      this.DataContext = p;
+    }
+
+    private class Person {
+      public Person() {
+        Age = 39;
+      }
+      public int Age { get; set; }
     }
 
     private void MyBtnId(object sender, RoutedEventArgs e) {

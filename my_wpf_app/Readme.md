@@ -100,3 +100,24 @@ Cursor="Hand" />
 - Input: https://www.tutorialspoint.com/wpf/wpf_input.htm   
   WPF app can get input from lots of devices. 
   eg; `Mouse`, `Keyboard`, `ContextMenu/RoutedCommands`(cut, paste, etc) 
+
+- Data binding: https://www.tutorialspoint.com/wpf/wpf_data_binding.htm   
+  WPF can interact and display data. There are two main ways;
+  (a) One-way binding. Data created in code-behind can be displayed in UI. But data edited in UI won't mutate the code behind one.    
+      We are looking for a property called `Age` and we specify mode as `OneWay`.    
+      The code behind needs to attach an object with `Age` property to `this.DataContext`
+```xaml
+<TextBox Name="AgeTextBox" Text="{Binding Age, Mode=OneWay}"/>
+```
+```cs
+public MainWindow() {
+  InitializeComponent();
+  var p = new Person();
+  this.DataContext = p;
+}
+
+private class Person {
+  public Person() {Age = 39;}
+  public int Age { get; set; }
+}
+```
