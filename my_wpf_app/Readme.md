@@ -96,3 +96,7 @@ Cursor="Hand" />
 - Layout: https://www.tutorialspoint.com/wpf/wpf_layouts.htm   
   Used to arrange a group of GUI elements in your application.       
   Some layout panels are; `Grid`, `Canvas`, `Dock`, `StackPanel`
+
+- Input: https://www.tutorialspoint.com/wpf/wpf_input.htm   
+  WPF app can get input from lots of devices. 
+  eg; `Mouse`, `Keyboard`, `ContextMenu/RoutedCommands`(cut, paste, etc) 
