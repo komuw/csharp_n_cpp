@@ -102,8 +102,10 @@ Cursor="Hand" />
   eg; `Mouse`, `Keyboard`, `ContextMenu/RoutedCommands`(cut, paste, etc) 
 
 - Data binding: https://www.tutorialspoint.com/wpf/wpf_data_binding.htm   
-  WPF can interact and display data. There are two main ways;
-  (a) One-way binding. Data created in code-behind can be displayed in UI. But data edited in UI won't mutate the code behind one.    
+  WPF can interact and display data. There are two main ways;   
+  (b) Two-Way binding: The user can modify the data in UI and have that data updated in the source. 
+      Uses `Mode=TwoWay`
+  (b) One-way binding. Data created in code-behind can be displayed in UI. But data edited in UI won't mutate the code behind one.    
       We are looking for a property called `Age` and we specify mode as `OneWay`.    
       The code behind needs to attach an object with `Age` property to `this.DataContext`
 ```xaml
