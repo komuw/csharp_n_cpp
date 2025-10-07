@@ -71,3 +71,14 @@ private void PopupButton_OpenPopup(object sender, RoutedEventArgs e) {
   (a) Implement in code-behind. Add an `x:Name="MyCoolHyperlink"` to the hyperlink then call `MyCoolHyperlink.Focus();` in the code-behind.      
       Commit [810c7d3](https://github.com/komuw/csharp_stuff/commit/810c7d311c1856d25a7c45913ea5309437b719ca) implements that approach. However once focussed, u cant tab away to another element.
   (b) Use a button
+```xaml
+<Button Content="{Binding SomeClass.Header}"
+Command="{Binding SomeClass.Launch}"
+Focusable="True"
+Style="{StaticResource HyperlinkButtonStyle}" 
+Background="Transparent"
+BorderThickness="0"
+Padding="0"
+Foreground="Blue"
+Cursor="Hand" />
+```
