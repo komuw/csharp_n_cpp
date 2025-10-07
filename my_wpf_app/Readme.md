@@ -55,7 +55,13 @@ then the c# build system will automatically generate the entry point. Hint hence
        
 - Event handling. https://www.tutorialspoint.com/wpf/wpf_routed_events.htm 
   You can add events. Look at how `MyBtnId` & `myTxtBlk` are used in `.xaml` and `.cs` file. 
-  You can register custom routed events via `RegisterRoutedEvent`   
+  You can register custom routed events via `RegisterRoutedEvent`     
+  There are 3 types of events: 
+    (a) Direct    - raised by an element in which the event originated, eg `MouseEnter`
+    (b) Bubbling  - begins with an element then travels up the tree to the topmost element.
+    (c) Tunnel    - Event handlers on the root element are invoked then event travels down to all children until it reaches the element in which the event originated.      
+  Events are often implemented as a tunneling/bubbling pair. So, you'll have a `previewMouseDown` and then a `MouseDown` event.
+
 
 - You can add a popup that when clicked will reveal others things inside(eg, it has a hyperlink inside). Note it has a PlacementTarget that is the element that will reveal the popup when clicked. In out case it is a button we've named `PopupButton`. That button has one event handler `PopupButton_OpenPopup` that is activated either when button is clicked or someone navigates into it(eg, via keyboard tab key). That event handler also needs to be added to the code-behind and should set `IsOpen` boolean. Note that the hypelink also has an event handler that needs to be added to code-behind(`Hyperlink_OnRequestNavigate`). It should ideally handle the link been clicked and open it up or log it, etc.
 ```xaml
@@ -82,3 +88,11 @@ Padding="0"
 Foreground="Blue"
 Cursor="Hand" />
 ```
+
+- Controls(UI elements): https://www.tutorialspoint.com/wpf/wpf_controls.htm       
+  They are found in `System.Windows.Controls` and can be implemented in `xaml`.      
+  eg; Window, Button, Textblock, Popup, Calendar, GridView, ToolTip 
+
+- Layout: https://www.tutorialspoint.com/wpf/wpf_layouts.htm   
+  Used to arrange a group of GUI elements in your application.       
+  Some layout panels are; `Grid`, `Canvas`, `Dock`, `StackPanel`
