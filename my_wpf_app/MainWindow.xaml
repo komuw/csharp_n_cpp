@@ -9,6 +9,12 @@
         Title="MainWindow"
         Height="450"
         Width="800">
+    
+    <!-- SolidColorBrush is from System.Windows.Media -->
+    <Window.Resources> 
+      <SolidColorBrush  x:Key="ourColorRsrc" Color="red" /> 
+   </Window.Resources> 
+
     <Grid>
         <TextBlock
             Name="myTxtBlk"
@@ -21,6 +27,8 @@
                     Click="MyBtnId"
                     Content="Click Me"
                     Margin="100"/>
+
+            <Rectangle Height="20" Fill="{StaticResource ourColorRsrc}" />
 
            <!-- 
            We are creating a TextBox that is bound to the Age property in MainWindow.xaml.cs

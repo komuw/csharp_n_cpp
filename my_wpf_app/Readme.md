@@ -123,3 +123,22 @@ private class Person {
   public int Age { get; set; }
 }
 ```
+
+- Resources: https://www.tutorialspoint.com/wpf/wpf_resources.htm     
+  It stores data that you intend to use multiple times. It is a dictionary.   
+  Apart from `StaticResource` there's also `DynamicResource` which is like data binding. 
+```xaml
+<!-- SolidColorBrush is from System.Windows.Media -->
+<Window.Resources> 
+  <SolidColorBrush  x:Key="ourColorRsrc" Color="red" /> 
+</Window.Resources> 
+
+<!--Use that color-->
+<Rectangle Height="20" Fill="{StaticResource ourColorRsrc}" />
+```
+  You can also have resources coming in from other paths.
+```xaml
+<Window.Resources> 
+  <ResourceDictionary Source="XAMLResources\ResourceDictionaries\DictionaryWithBrush.xaml"/> 
+</Window.Resources> 
+```
