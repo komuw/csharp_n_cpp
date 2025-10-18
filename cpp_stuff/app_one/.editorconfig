@@ -1,0 +1,11 @@
+# example
+[*.{c++,cpp,h}]
+indent_style = space
+indent_size = 2
+cpp_new_line_before_open_brace = none
+cpp_new_line_before_else = false
+cpp_new_line_before_catch = false
+cpp_new_line_before_finally = false
+cpp_max_line_length = 30 # Enforce wrapping if exceeded
+
+ 
