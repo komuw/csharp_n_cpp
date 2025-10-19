@@ -1,4 +1,5 @@
 #include <iostream>
+#include "add.h"
 
 /* run;
 windows:
@@ -10,7 +11,6 @@ linux:
   ./build/app_one
 */
 
-int add(int x, int y);
 
 int main() {
   std::cout << add(2, 3);
