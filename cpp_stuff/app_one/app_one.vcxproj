@@ -16,22 +16,24 @@
   </PropertyGroup>
 
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-    <ItemGroup>
-      <ClCompile Include="main.cpp">
-        <!--
-        ConformanceMode=true makes sure u aren't using compiler specific extensions.
-        WarningLevel: Level0(turns off all warnings)
-         -->
-        <LanguageStandard>stdcpp14</LanguageStandard>
-        <ConformanceMode>true</ConformanceMode>
-        <WarningLevel>Level4</WarningLevel>
-      </ClCompile>
-      <ClCompile Include="add.cpp">
-        <LanguageStandard>stdcpp14</LanguageStandard>
-        <ConformanceMode>true</ConformanceMode>
-        <WarningLevel>Level4</WarningLevel>
-      </ClCompile>
-    </ItemGroup>
+
+  <!-- `ItemDefinitionGroup.ClCompile` is specifically for C++ compiler settings -->
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <!--
+      ConformanceMode=true makes sure u aren't using compiler specific extensions.
+      WarningLevel: Level0(turns off all warnings)
+       -->
+      <ConformanceMode>true</ConformanceMode>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="add.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   
 </Project>
