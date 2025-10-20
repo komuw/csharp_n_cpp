@@ -27,7 +27,15 @@
        -->
       <ConformanceMode>true</ConformanceMode>
       <WarningLevel>Level4</WarningLevel>
+      <!-- Debug settings (equivalent to g++ -g3 -O0) -->
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
+
+    <Link>
+      <!-- Linker setting to generate debug info -->
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
   </ItemDefinitionGroup>
 
   <ItemGroup>
