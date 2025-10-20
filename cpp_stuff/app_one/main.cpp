@@ -3,12 +3,12 @@
 
 /* run;
 windows:
-  msbuild app_one.vcxproj -p:Platform=x64 -p:Configuration=Debug -warnAsError
-  ./x64/Debug/app_one.exe
+  msbuild app_one.vcxproj -p:Platform=x64 -p:Configuration=Debug -warnAsError && ./x64/Debug/app_one.exe
 
 linux:
-  cd build && cmake .. && make && cd ..
-  ./build/app_one
+  cd build && cmake .. && make && cd .. && ./build/app_one
+    or
+  g++ -std=c++14 -Wall main.cpp add.cpp -o build/app_one && ./build/app_one
 */
 
 
